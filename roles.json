@@ -1,20 +1,18 @@
 {
   "Admin": [
-    "AI Tools",
+    "Marketing",
     "Sponsorship Tools",
     "Ops Tools",
     "Finance Tools",
-    "Membership Tools"
+    "Governance & Compliance",
+    "Settings"
   ],
   "Board": [
-    "AI Tools",
+    "Marketing",
     "Finance Tools",
-    "Sponsorship Tools"
+    "Governance & Compliance"
   ],
   "Sponsor": [
     "Sponsorship Tools"
-  ],
-  "Member": [
-    "Membership Tools"
   ]
 }

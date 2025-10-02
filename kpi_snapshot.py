@@ -1,47 +1,14 @@
 
-import os, json, datetime
-import streamlit as st
-import pandas as pd
+import streamlit as st, pandas as pd, os, datetime
 from shared.ui import page_header
-from shared.storage import save_json, load_json
-
-SRC = "data/finance_source.csv"  # optional cached source
-OUTDIR = "data/snapshots"
-
-def _calc_kpis(df: pd.DataFrame):
-    lower = {c.lower(): c for c in df.columns}
-    rev = df[lower.get("revenue", list(df.columns)[0])].astype(float).fillna(0).sum() if df.shape[1] else 0
-    cost = df[lower.get("cost", list(df.columns)[1] if df.shape[1]>1 else 0)].astype(float).fillna(0).sum() if df.shape[1]>1 else 0
-    profit = rev - cost
-    return {"revenue": float(rev), "cost": float(cost), "profit": float(profit)}
-
+from shared.storage import save_json
 def run(user):
-    page_header("Finance KPI Snapshot", "Daily snapshot writer + simple scheduler")
-    st.caption("Upload a finance CSV once; we will take a daily KPI snapshot when you open the app or click the button.")
-
-    up = st.file_uploader("Upload finance CSV (Revenue/Cost columns)", type=["csv"])
+    page_header("Finance KPI Snapshot","Upload a finance CSV; we snapshot daily KPIs")
+    up=st.file_uploader("Upload finance CSV (Revenue, Cost)", type=["csv"])
     if up:
-        with open(SRC, "wb") as f:
-            f.write(up.read())
-        st.success("Saved base finance_source.csv")
-
-    if not os.path.exists(SRC):
-        st.info("Upload a finance CSV to enable snapshots.")
-        return
-
-    df = pd.read_csv(SRC)
-    kpis = _calc_kpis(df)
-    st.json(kpis)
-
-    os.makedirs(OUTDIR, exist_ok=True)
-    today = datetime.date.today().isoformat()
-    out = os.path.join(OUTDIR, f"{today}.json")
-
-    if not os.path.exists(out):
-        save_json(out, {"date": today, "kpis": kpis})
-        st.success(f"Snapshot saved: {out}")
-    else:
-        st.caption("Snapshot for today already exists.")
-    if st.button("Force Save Snapshot"):
-        save_json(out, {"date": today, "kpis": kpis, "forced": True})
-        st.success(f"Forced snapshot saved: {out}")
+        df=pd.read_csv(up); st.dataframe(df.head(50))
+        rev=float(df.select_dtypes(include="number").iloc[:,0].sum()); cost=float(df.select_dtypes(include="number").iloc[:,1].sum())
+        kpis={"revenue":rev,"cost":cost,"profit":rev-cost}; st.json(kpis)
+        os.makedirs("data/snapshots", exist_ok=True)
+        save_json(f"data/snapshots/{datetime.date.today().isoformat()}.json", {"date":datetime.date.today().isoformat(),"kpis":kpis})
+        st.success("Snapshot saved")
