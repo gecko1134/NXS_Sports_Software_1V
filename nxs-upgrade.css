@@ -1,0 +1,12 @@
+.nxs-upgrade-wrapper { max-width: 720px; margin: 0 auto; }
+.nxs-upgrade { border:1px solid #e3e8f5; background:#fafbff; border-radius:12px; padding:16px; }
+.nxs-upgrade .nxs-badge { display:inline-block; padding:4px 10px; border-radius:20px; background:#eef2f8; font-size:12px; letter-spacing:.3px; margin-bottom:8px; }
+.nxs-upgrade h3 { margin:6px 0 6px 0; font-size:20px; }
+.nxs-upgrade p { margin:0 0 10px 0; color:#333; line-height:1.5; }
+.nxs-upgrade .nxs-pills { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 12px 0; }
+.nxs-upgrade .pill { background:#eef6ff; border:1px solid #cfe2ff; border-radius:999px; padding:6px 10px; font-size:12px; }
+.nxs-upgrade .nxs-cta { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.nxs-upgrade .btn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:600; }
+.nxs-upgrade .btn-primary { background:#0b5fff; color:#fff; }
+.nxs-upgrade .btn-secondary { background:#eef2f8; color:#0b2345; }
+.nxs-upgrade .nxs-foot { font-size:12px; color:#657085; margin-top:8px; }
