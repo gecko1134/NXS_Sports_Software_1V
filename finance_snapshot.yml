@@ -1,0 +1,30 @@
+
+name: Finance KPIs Daily
+on:
+  schedule:
+    - cron: "0 9 * * *"   # 9:00 UTC daily
+  workflow_dispatch:
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas
+      - name: Compute KPIs
+        run: |
+          python - <<'PY'
+          import json, pandas as pd
+          df = pd.read_csv('data/finance_source.csv')
+          rev = float(df.get('Revenue', df.select_dtypes(include='number').columns[0]).fillna(0).sum())
+          cost = float(df.get('Cost', df.select_dtypes(include='number').columns[1]).fillna(0).sum())
+          profit = rev - cost
+          snap = {'date': __import__('datetime').date.today().isoformat(), 'kpis': {'revenue': rev, 'cost': cost, 'profit': profit}}
+          open('data/snapshots/latest.json','w').write(json.dumps(snap, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: finance-kpis
+          path: data/snapshots/latest.json

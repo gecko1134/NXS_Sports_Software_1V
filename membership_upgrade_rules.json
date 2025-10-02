@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-02",
+    "notes": "Rules for membership upgrade nudges. Edit thresholds/rewards here\u2014no code changes required."
+  },
+  "settings": {
+    "frequency_cap_per_week": 1,
+    "household_consolidation": true,
+    "cooldown_after_dismiss_days": 21,
+    "cooldown_after_upgrade_days": 60,
+    "ab_test": {
+      "enabled": true,
+      "variants": [
+        "A",
+        "B"
+      ],
+      "split": [
+        0.5,
+        0.5
+      ],
+      "differences": {
+        "A": {
+          "reward": {
+            "bonus_credits": 50,
+            "discount_pct_first_n_months": 10,
+            "discount_months": 2
+          }
+        },
+        "B": {
+          "reward": {
+            "bonus_credits": 75,
+            "discount_pct_first_n_months": 0,
+            "discount_months": 0
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "sportskey_to_internal": {
+      "sportskey.credits_used_percent": "credits_used_pct",
+      "sportskey.peak_bookings_last_14d": "peak_bookings_14d",
+      "sportskey.waitlist_events_last_30d": "waitlist_events_30d",
+      "sportskey.household_members": "household_members",
+      "sportskey.has_active_annual": "has_annual",
+      "sportskey.recent_monthly_renewals": "recent_renewals_count"
+    }
+  },
+  "triggers": [
+    {
+      "from_tier": "Explorer",
+      "to_tier": "Family Plus",
+      "criteria": [
+        {
+          "field": "credits_used_pct",
+          "op": ">=",
+          "value": 0.8
+        },
+        {
+          "any_of": [
+            {
+              "field": "peak_bookings_14d",
+              "op": ">=",
+              "value": 2
+            },
+            {
+              "field": "household_members",
+              "op": ">=",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "bonus_credits": 50,
+        "discount_pct_first_n_months": 10,
+        "discount_months": 2
+      },
+      "message": {
+        "title": "Nice! You\u2019re maximizing your plan.",
+        "body": "Upgrade to Family Plus to unlock +{bonus_credits} credits this month and {discount_pct_first_n_months}% off your next {discount_months} months.",
+        "cta_primary": "Upgrade",
+        "cta_secondary": "Not now",
+        "cta_tertiary": "Compare plans"
+      },
+      "cooldown_days": 21
+    },
+    {
+      "from_tier": "Family Plus",
+      "to_tier": "Athlete Elite",
+      "criteria": [
+        {
+          "any_of": [
+            {
+              "field": "peak_bookings_14d",
+              "op": ">=",
+              "value": 3
+            },
+            {
+              "field": "waitlist_events_30d",
+              "op": ">=",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "priority_slots_days": 60,
+        "peak_multiplier_reduction_pct": 15
+      },
+      "message": {
+        "title": "You\u2019re running an elite schedule.",
+        "body": "Upgrade to Athlete Elite to get priority on peak slots for {priority_slots_days} days and lower peak multipliers (~{peak_multiplier_reduction_pct}% savings).",
+        "cta_primary": "Upgrade",
+        "cta_secondary": "Not now",
+        "cta_tertiary": "Compare plans"
+      },
+      "cooldown_days": 30
+    },
+    {
+      "from_tier": "Any",
+      "to_tier": "Annual",
+      "criteria": [
+        {
+          "all_of": [
+            {
+              "field": "recent_renewals_count",
+              "op": ">=",
+              "value": 3
+            },
+            {
+              "field": "has_annual",
+              "op": "==",
+              "value": false
+            },
+            {
+              "field": "credits_used_pct",
+              "op": ">=",
+              "value": 0.65
+            }
+          ]
+        }
+      ],
+      "reward": {
+        "guest_passes": 4,
+        "loyalty_badge": true
+      },
+      "message": {
+        "title": "Lock in your momentum.",
+        "body": "Switch to Annual and get {guest_passes} guest passes plus a loyalty badge on your account.",
+        "cta_primary": "Switch to Annual",
+        "cta_secondary": "Not now",
+        "cta_tertiary": "Compare plans"
+      },
+      "cooldown_days": 60
+    }
+  ]
+}

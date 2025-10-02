@@ -1,0 +1,91 @@
+{
+  "app_name": "NXS Master Operating System",
+  "version": "1.0.0",
+  "nav_order": [
+    "AI Tools",
+    "Sponsorship Tools",
+    "Ops Tools",
+    "Finance Tools",
+    "Membership Tools",
+    "Growth & Leagues",
+    "Marketing",
+    "Governance & Compliance",
+    "Settings"
+  ],
+  "modules": {
+    "AI Tools": [
+      "modules.ai.ai_facility_forecaster",
+      "modules.ai.ai_strategy_dashboard",
+      "modules.ai.ai_personalization_engine",
+      "modules.ai.ai_risk_alerts"
+    ],
+    "Sponsorship Tools": [
+      "modules.sponsorship.naming_rights_pricing_floor",
+      "modules.sponsorship.sponsor_optimizer",
+      "modules.sponsorship.sponsor_portal",
+      "modules.sponsorship.sponsorship_inventory",
+      "modules.sponsorship.sponsor_proposal_pdf",
+      "modules.sponsorship.proposal_pdf_exporter",
+      "modules.sponsorship.renewal_alerts",
+      "modules.sponsorship.proposal_emailer",
+      "modules.sponsorship.deal_desk",
+      "modules.sponsorship.contract_pdf_generator",
+      "modules.sponsorship.esign_envelope_creator"
+    ],
+    "Ops Tools": [
+      "modules.ops.document_library",
+      "modules.ops.scheduler_optimizer",
+      "modules.ops.access_control",
+      "modules.ops.qr_checkin",
+      "modules.ops.incident_reports",
+      "modules.ops.health_monitor",
+      "modules.ops.data_exporter"
+    ],
+    "Finance Tools": [
+      "modules.finance.board_financial_summary",
+      "modules.finance.grant_match_ai",
+      "modules.finance.pdf_grant_exporter",
+      "modules.finance.sports_lounge_playhouse_pro_forma",
+      "modules.finance.brick_campaign_planner",
+      "modules.finance.finance_sync",
+      "modules.finance.kpi_snapshot",
+      "modules.finance.qbo_connector",
+      "modules.finance.qbo_oauth_helper",
+      "modules.finance.sponsor_billing",
+      "modules.finance.receivables_dashboard",
+      "modules.finance.revenue_recognition",
+      "modules.finance.budget_vs_actuals",
+      "modules.finance.kpi_slack_notifier"
+    ],
+    "Membership Tools": [
+      "modules.membership.membership_nudges",
+      "modules.membership.membership_upgrade_rules_viewer",
+      "modules.membership.membership_retention_ai",
+      "modules.membership.membership_segmenter",
+      "modules.membership.member_goal_tracker",
+      "modules.membership.ticketing_integration"
+    ],
+    "Growth & Leagues": [
+      "modules.growth.league_roadmap_viewer",
+      "modules.growth.womens_league_guide_viewer",
+      "modules.growth.dual_campaign_playbook",
+      "modules.growth.player_lab_strategy",
+      "modules.growth.membership_usage_plan"
+    ],
+    "Marketing": [
+      "modules.marketing.ad_launcher",
+      "modules.marketing.marketing_series",
+      "modules.marketing.double_credits_promo",
+      "modules.marketing.pipeline_dashboard"
+    ],
+    "Governance & Compliance": [
+      "modules.governance.board_walkthrough_mode",
+      "modules.governance.board_packet_compiler",
+      "modules.governance.drive_uploader",
+      "modules.governance.board_monthly_email"
+    ],
+    "Settings": [
+      "modules.settings.theme_switcher"
+    ]
+  }
+}

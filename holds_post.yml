@@ -1,0 +1,36 @@
+
+name: SportsKey Holds Post (Weekdays 11am CT)
+on:
+  schedule:
+    - cron: "0 16 * * 1-5"   # ~11:00 CT (adjust seasonally as needed)
+  workflow_dispatch:
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests pandas
+      - name: Post Holds
+        env:
+          SPORTSKEY_API_BASE: ${{ secrets.SPORTSKEY_API_BASE }}
+          SPORTSKEY_API_TOKEN: ${{ secrets.SPORTSKEY_API_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, json, requests, pandas as pd
+          grid_path = 'exports/suggested_holds.csv'
+          try:
+              df = pd.read_csv(grid_path)
+              payload = {"requests": df.to_dict(orient="records")}
+              url = os.getenv('SPORTSKEY_API_BASE','').rstrip('/') + '/holds'
+              token = os.getenv('SPORTSKEY_API_TOKEN','')
+              if not url or not token:
+                  raise SystemExit("Missing SPORTSKEY_API_BASE or SPORTSKEY_API_TOKEN")
+              r = requests.post(url, headers={'Authorization': f'Bearer {token}','Content-Type':'application/json'}, data=json.dumps(payload), timeout=30)
+              print("Status:", r.status_code)
+              print(r.text[:1000])
+          except Exception as e:
+              print("No holds CSV or error:", e)
+          PY

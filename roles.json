@@ -1,0 +1,20 @@
+{
+  "Admin": [
+    "AI Tools",
+    "Sponsorship Tools",
+    "Ops Tools",
+    "Finance Tools",
+    "Membership Tools"
+  ],
+  "Board": [
+    "AI Tools",
+    "Finance Tools",
+    "Sponsorship Tools"
+  ],
+  "Sponsor": [
+    "Sponsorship Tools"
+  ],
+  "Member": [
+    "Membership Tools"
+  ]
+}
