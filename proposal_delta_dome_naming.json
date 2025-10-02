@@ -1,0 +1,15 @@
+{
+  "ts": "2025-10-02T14:45:00Z",
+  "sponsor": "Delta Regional",
+  "placement": "Dome Naming Rights",
+  "inputs": {
+    "media": 750000,
+    "activation": 250000,
+    "exclusivity": 2.0,
+    "goodwill_pct": 25,
+    "opportunity_cost": 100000
+  },
+  "price_floor": 1000000,
+  "status": "Won + Invoiced",
+  "proposal_id": "prop_delta_003"
+}

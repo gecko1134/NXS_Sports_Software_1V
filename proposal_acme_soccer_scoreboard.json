@@ -1,0 +1,15 @@
+{
+  "ts": "2025-10-02T12:00:00Z",
+  "sponsor": "Acme Health",
+  "placement": "Scoreboard Panel \u2013 Dome A",
+  "inputs": {
+    "media": 180000,
+    "activation": 75000,
+    "exclusivity": 1.4,
+    "goodwill_pct": 15,
+    "opportunity_cost": 20000
+  },
+  "price_floor": 255000,
+  "status": "Draft",
+  "proposal_id": "prop_acme_001"
+}

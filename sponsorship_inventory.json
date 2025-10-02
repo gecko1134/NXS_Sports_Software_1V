@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "banner_1",
+      "name": "Main Dome Banner North",
+      "price": 15000,
+      "term_months": 12,
+      "available": true
+    },
+    {
+      "id": "court_logo_a",
+      "name": "Court A Center Logo",
+      "price": 25000,
+      "term_months": 12,
+      "available": true
+    },
+    {
+      "id": "scoreboard_1",
+      "name": "Scoreboard Panel",
+      "price": 18000,
+      "term_months": 12,
+      "available": false,
+      "sponsor": "Summit Ortho",
+      "years_remaining": 2
+    }
+  ]
+}

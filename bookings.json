@@ -1,0 +1,23 @@
+{
+  "resources": [
+    "Court A",
+    "Court B",
+    "Half Turf 1",
+    "Half Turf 2",
+    "Full Turf"
+  ],
+  "bookings": [
+    {
+      "resource": "Court A",
+      "start": "2025-10-03T17:00:00",
+      "end": "2025-10-03T19:00:00",
+      "group": "Youth Basketball U12"
+    },
+    {
+      "resource": "Half Turf 1",
+      "start": "2025-10-03T18:00:00",
+      "end": "2025-10-03T20:00:00",
+      "group": "Club Soccer U14"
+    }
+  ]
+}

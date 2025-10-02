@@ -1,0 +1,18 @@
+{
+  "decisions": [
+    {
+      "proposal_id": "prop_delta_003",
+      "outcome": "Won",
+      "reason": "Brand fit + regional reach",
+      "channel": "In-Person",
+      "ts": "2025-10-02T17:10:00Z"
+    },
+    {
+      "proposal_id": "prop_acme_001",
+      "outcome": "Lost",
+      "reason": "Budget timing",
+      "channel": "Email",
+      "ts": "2025-10-02T18:20:00Z"
+    }
+  ]
+}

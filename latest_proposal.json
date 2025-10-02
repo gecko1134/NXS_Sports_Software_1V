@@ -1,0 +1,15 @@
+{
+  "ts": "2025-10-02T13:30:00Z",
+  "sponsor": "Summit Ortho",
+  "placement": "Court A Center Logo",
+  "inputs": {
+    "media": 220000,
+    "activation": 90000,
+    "exclusivity": 1.5,
+    "goodwill_pct": 20,
+    "opportunity_cost": 25000
+  },
+  "price_floor": 310000,
+  "status": "Sent",
+  "proposal_id": "prop_summit_002"
+}
