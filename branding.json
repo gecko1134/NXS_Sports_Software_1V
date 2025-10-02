@@ -1,0 +1,13 @@
+{
+  "facility_name": "National Sports Dome & Performance Complex",
+  "logo_url": "https://via.placeholder.com/240x80?text=NSD+Logo",
+  "facility_address": "Proctor, MN",
+  "facility_website": "nationalsportsdome.com",
+  "unsubscribe_url": "#",
+  "calendly_url": "https://cal.example.com/nxdome",
+  "docusign_url": "https://docusign.example.com/envelope/placeholder",
+  "theme": {
+    "mode": "light",
+    "accent": "#0B5FFF"
+  }
+}
