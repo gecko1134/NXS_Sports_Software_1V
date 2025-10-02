@@ -1,28 +1,17 @@
-{
-  "users": [
-    {
-      "email": "admin@nxscomplex.org",
-      "name": "Admin User",
-      "role": "Admin",
-      "password_hash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9"
-    },
-    {
-      "email": "board@nxscomplex.org",
-      "name": "Board Member",
-      "role": "Board",
-      "password_hash": "8a5472d24b4fd05b667f8024a7e4c7b9c54e0ab30dee9667ea2be3bb95490a20"
-    },
-    {
-      "email": "sponsor@nxscomplex.org",
-      "name": "Sponsor",
-      "role": "Sponsor",
-      "password_hash": "67af54685436e34500375fcb284086a23e02c28c39d49d4ba83dcb5811b29718"
-    },
-    {
-      "email": "member@nxscomplex.org",
-      "name": "Member",
-      "role": "Member",
-      "password_hash": "5600376e863d2f57a053518f324ad3840b0bc2348b573af281a7b7cbe7a228c6"
-    }
-  ]
-}
+[
+  {
+    "email": "admin@example.com",
+    "password": "admin123",
+    "role": "Admin"
+  },
+  {
+    "email": "board@example.com",
+    "password": "board123",
+    "role": "Board"
+  },
+  {
+    "email": "sponsor@example.com",
+    "password": "sponsor123",
+    "role": "Sponsor"
+  }
+]
