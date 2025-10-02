@@ -7,8 +7,6 @@ def run(user):
     mode=st.radio("Theme",["Dark","Light"])
     if st.button("Apply"):
         CFG.parent.mkdir(parents=True, exist_ok=True)
-        if mode=="Dark":
-            CFG.write_text("[theme]\nbase='dark'\nprimaryColor='#22c55e'")
-        else:
-            CFG.write_text("[theme]\nbase='light'\nprimaryColor='#0ea5e9'")
+        if mode=="Dark": CFG.write_text("[theme]\nbase='dark'\nprimaryColor='#22c55e'")
+        else: CFG.write_text("[theme]\nbase='light'\nprimaryColor='#0ea5e9'")
         st.success("Theme updated. Restart app to apply.")

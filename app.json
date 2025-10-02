@@ -1,6 +1,6 @@
 {
   "app_name": "NXS Master Operating System",
-  "version": "19.0-lite",
+  "version": "Secure v1",
   "nav_order": [
     "Marketing",
     "Sponsorship Tools",
@@ -20,17 +20,23 @@
     ],
     "Ops Tools": [
       "modules.ops.scheduler_optimizer",
+      "modules.ops.document_library",
       "modules.ops.data_exporter"
     ],
     "Finance Tools": [
+      "modules.finance.finance_sync",
       "modules.finance.kpi_snapshot",
+      "modules.finance.pro_forma_exporter",
       "modules.finance.revenue_recognition"
     ],
     "Governance & Compliance": [
-      "modules.governance.board_walkthrough_mode"
+      "modules.governance.board_packet_compiler"
     ],
     "Settings": [
-      "modules.settings.theme_switcher"
+      "modules.settings.user_admin",
+      "modules.settings.change_password",
+      "modules.settings.theme_switcher",
+      "modules.settings.sso_google_setup"
     ]
   }
 }
